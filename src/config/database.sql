@@ -1,0 +1,9 @@
+CREATE DATABASE dxmprofuse;
+
+USE dxmprofuse;
+
+CREATE TABLE files (
+  id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  filename VARCHAR(255) NOT NULL
+);
+

@@ -1,0 +1,37 @@
+form {
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed var(--PRIMARY);
+  border-radius: .5rem;
+  margin: 1rem;
+  position: relative;
+  flex-direction: column;
+
+  svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  label {
+    display: block;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  input {
+    display: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+  }
+}

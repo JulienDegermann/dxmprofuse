@@ -1,0 +1,49 @@
+@import './files.css';
+@import './form.css';
+
+:root {
+  --PRIMARY: #2F7FEE;
+  --LIGHT: #FFFFFF;
+  --DARK: #1E1E1E;
+  --LIST: #FBFBFB;
+  --GRAY: #C8C8C8;
+}
+
+
+body {
+  background: var(--PRIMARY);
+  font-size: 14px;
+  color: var(--DARK)
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+#file-loader {
+  margin: 2rem;
+  background-color: var(--LIGHT);
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 400px;
+}
+
+#file-loader>.flex {
+  height: 100%;
+
+  &>* {
+    width: 50%;
+    padding: 2rem;
+  }
+}
+
+
+

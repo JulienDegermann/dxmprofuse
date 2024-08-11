@@ -1,0 +1,34 @@
+.files {
+  background: var(--LIST);
+  height: 100%;
+  overflow-y: hidden;
+
+  .scroll {
+    overflow-y: scroll;
+    scrollbar-color: var(--PRIMARY) var(--GRAY);
+    padding-right: 2rem;
+    height: calc(100% - 0rem);
+  }
+
+  .item.flex {
+    margin: .25rem 0;
+    justify-content: space-between;
+
+
+    .delete {
+      cursor: pointer;
+      width: auto;
+      height: auto;
+      background: none;
+      border: none;
+
+      & * {
+        transition: fill .3s;
+      }
+
+      &:hover * {
+        fill: red;
+      }
+    }
+  }
+}
