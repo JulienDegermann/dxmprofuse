@@ -1,3 +1,5 @@
+/* form styles */
+
 form {
   justify-content: center;
   align-items: center;
@@ -18,14 +20,12 @@ form {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     font-size: 25px;
     text-align: center;
     font-weight: 700;
   }
 
   input {
-    display: none;
     display: block;
     position: absolute;
     top: 0;

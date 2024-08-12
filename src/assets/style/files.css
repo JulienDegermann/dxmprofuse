@@ -1,3 +1,5 @@
+/* files list */
+
 .files {
   background: var(--LIST);
   height: 100%;
@@ -20,8 +22,8 @@
     & .bold {
       font-size: 25px;
       font-weight: 500;
+      word-break: break-word;
     }
-
 
     .delete {
       cursor: pointer;

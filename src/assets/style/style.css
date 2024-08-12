@@ -1,7 +1,12 @@
+/* global styles and imports */
+
+/* imports */
 @import './files.css';
 @import './form.css';
 @import './fonts.css';
 
+
+/* global styles */
 :root {
   --PRIMARY: #2F7FEE;
   --LIGHT: #FFFFFF;
@@ -9,7 +14,6 @@
   --LIST: #FBFBFB;
   --GRAY: #C8C8C8;
 }
-
 
 body {
   background: var(--PRIMARY);
