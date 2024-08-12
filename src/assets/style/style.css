@@ -1,5 +1,6 @@
 @import './files.css';
 @import './form.css';
+@import './fonts.css';
 
 :root {
   --PRIMARY: #2F7FEE;
@@ -12,8 +13,10 @@
 
 body {
   background: var(--PRIMARY);
-  font-size: 14px;
-  color: var(--DARK)
+  font-size: 18px;
+  color: var(--DARK);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.4;
 }
 
 * {
@@ -44,6 +47,3 @@ body {
     padding: 2rem;
   }
 }
-
-
-
