@@ -10,28 +10,20 @@ formInput.addEventListener('change', e => {
 
   Array.from(formInput.files).forEach(file => {
     console.log(file.type)
-
-    if (file.type !== 'application/pdf' && file.type !== 'image/jpeg') {
-      alert('Un des fichiers envoyés n\'est pas pris en charge')
-    } else {
-      const formData = new FormData();
-      Array.from(formInput.files).forEach(file => {
-        console.log(file);
-        formData.append(file.name, file);
-      })
-
-      const res = updateFiles(formData);
-    }
-
-
+form.submit()
+    // if (file.type !== 'application/pdf' && file.type !== 'image/jpeg') {
+    //   alert('Un des fichiers envoyés n\'est pas pris en charge')
+    // } else {
+    //   form.submit()
+    // }
   })
 })
-  const deleteButtons = document.querySelectorAll('.delete');
+const deleteButtons = document.querySelectorAll('.delete');
 
-  deleteButtons.forEach(button => {
-    button.addEventListener('click', e => {
-      const id = e.currentTarget.id
-      console.log(id);
-      location.href = 'src/api/remove.php?id=' + id
-    })
+deleteButtons.forEach(button => {
+  button.addEventListener('click', e => {
+    const id = e.currentTarget.id
+    console.log(id);
+    location.href = 'src/api/remove.php?id=' + id
   })
+})

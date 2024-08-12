@@ -25,7 +25,8 @@ include_once './src/api/getFiles.php';
       <form action="src/api/addFiles.php" method="POST" enctype="multipart/form-data" class="flex">
         <?php include_once './src/assets/icons/download.svg'; ?>
         <label class="bold" for="files">Glisser & Déposer <br /> vos fichiers <br /> ici</label>
-        <input id="files" type="file" name="files[]" multiple accept="image/jpeg, application/pdf" multiple>
+        <!-- <input id="files" type="file" name="files[]" accept="image/jpeg, application/pdf" multiple> -->
+        <input id="files" type="file" name="files[]"  multiple>
       </form>
       <div class="files">
         <div class="scroll">
