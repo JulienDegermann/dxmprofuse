@@ -1,15 +1,7 @@
 const formInput = document.querySelector('#files');
 const form = document.querySelector('form');
-<<<<<<< HEAD
 
 formInput.addEventListener('change', () => {
-=======
-
-
-formInput.addEventListener('change', e => {
-
-
->>>>>>> 699b880 (clean useless code)
   form.submit()
 })
 
