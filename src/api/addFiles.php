@@ -1,11 +1,7 @@
 <?php
-include_once '../config/pdo.php';
-include_once 'filesRepo.php';
-include_once '../core/uploadSettings.php';
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['files'])) {
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES)) {
-
-  // get files
+  // get added files
   $files = $_FILES['files'];
 
   // remove files not being pdf or jpeg
@@ -19,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES)) {
 
   // uniq file name
   foreach ($files['name'] as $key => $name) {
-    $files['name'][$key] = uniqid() . $name;
+    $files['name'][$key] = uniqid() . htmlentities($name);
   }
 
   // prepare an array of files
@@ -32,15 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES)) {
     ];
   }
 
-  // store datas in database
-  $sendFile = addFiles($pdo, $newFiles);
-
-  // save files on server
-  if ($sendFile) {
-    foreach ($newFiles as $file) {
-      move_uploaded_file($file['tmp_name'], UPLOAD_DIR . $file['name']);
-    }
-
-    header('location: /');
+  foreach($newFiles as $file) {
+    move_uploaded_file($file['tmp_name'], UPLOAD_DIR . $file['name']);
   }
+
+  header('Location: /');
 }

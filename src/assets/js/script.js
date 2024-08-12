@@ -4,7 +4,8 @@ const form = document.querySelector('form');
 formInput.addEventListener('change', () => {
   let totalWeight = 0
   let error = ''
-
+  
+  // check if pdf or jpeg 
   Array.from(formInput.files).forEach(file => {
     error = file.type !== 'application/pdf' && file.type !== 'image/jpeg' ? 'Un fichier n\'est pas au bon format (JPEG ou PDF)' : ''
     totalWeight += file.size
@@ -34,6 +35,6 @@ const deleteButtons = document.querySelectorAll('.delete');
 deleteButtons.forEach(button => {
   button.addEventListener('click', e => {
     const id = e.currentTarget.id
-    location.href = 'src/api/remove.php?id=' + id
+    location.href = '/?key=' + id
   })
 })

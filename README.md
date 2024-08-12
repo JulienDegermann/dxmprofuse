@@ -1,5 +1,3 @@
 - clone the repository at : git@github.com:JulienDegermann/dxmprofuse.git
-- create a database called 'dxmprofuse' (database structure available in src/core/database.sql)
-- create a connection file with PDO
 - run MAMP and select the cloned folder as root
 - access to http://localhost:8888/
