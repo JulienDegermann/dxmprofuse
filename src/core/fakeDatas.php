@@ -1,6 +1,6 @@
 <?php
 
-// datas before the database
+// datas before database creation
 $files = [
   [
     'id' => 1,

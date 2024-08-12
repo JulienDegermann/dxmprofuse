@@ -7,4 +7,4 @@
     <?php include './src/assets/icons/trash.svg'; ?>
   </button>
   </button>
-</div>
+</div> 

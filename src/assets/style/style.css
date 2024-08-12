@@ -41,13 +41,13 @@ body {
   border-radius: 1rem;
   overflow: hidden;
   height: 400px;
-}
 
-#file-loader>.flex {
-  height: 100%;
+  & > .flex {
+    height: 100%;
 
-  &>* {
-    width: 50%;
-    padding: 2rem;
+    &>* {
+      width: 50%;
+      padding: 2rem;
+    }
   }
 }

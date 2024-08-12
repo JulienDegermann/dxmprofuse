@@ -9,6 +9,12 @@ $id = intval($_GET['id']);
 
 $file = findFile($pdo, $id);
 
+// redirect if no file found
+if(!$file) {
+  header('Location: /');
+  exit();
+}
+
 if (!$file) {
   header('Location: /');
 }

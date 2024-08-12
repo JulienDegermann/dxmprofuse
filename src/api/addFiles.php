@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES)) {
     $files['name'][$key] = uniqid() . $name;
   }
 
+  // prepare an array of files
   $newFiles = [];
   foreach ($files['name'] as $key => $value) {
     $newFiles[$key] = [
@@ -34,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES)) {
   // store datas in database
   $sendFile = addFiles($pdo, $newFiles);
 
+  // save files on server
   if ($sendFile) {
     foreach ($newFiles as $file) {
       move_uploaded_file($file['tmp_name'], UPLOAD_DIR . $file['name']);
