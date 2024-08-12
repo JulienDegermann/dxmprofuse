@@ -47,13 +47,13 @@ function deleteFile(PDO $pdo, int $id)
 }
 
 /**
+ *  * function to load 1 file (no multiple attribute on input)
  * @param PDO $pdo : PDO instance
  * @param string $filename : file name
  * @param int $size : file size (ko)
  */
 function addFile(PDO $pdo, string $filename, string $size): bool
 {
-
   $sql = "INSERT INTO files (filename, size) VALUES (:filename, :size)";
   $stmt = $pdo->prepare($sql);
   $stmt->bindParam(':filename', $filename, PDO::PARAM_STR);
@@ -65,6 +65,7 @@ function addFile(PDO $pdo, string $filename, string $size): bool
 
 
 /**
+ * function to load several files
  * @param PDO $pdo : PDO instance
  * @param array $files : array of files (string filename + int size)
  * @return bool : return if insert is success
@@ -74,6 +75,8 @@ function addFiles(PDO $pdo, array $files): bool
 
   $sql = "INSERT INTO files (filename, size) VALUES ";
 
+
+  // prepare values and bindValues
   $values = [];
   $params = [];
   foreach ($files as $key => $file) {
@@ -84,8 +87,6 @@ function addFiles(PDO $pdo, array $files): bool
 
   $sql .= implode(', ', $values);
   $sql .= ';';
-
-  var_dump($sql);
   $stmt = $pdo->prepare($sql);
 
 
@@ -97,14 +98,6 @@ function addFiles(PDO $pdo, array $files): bool
       $stmt->bindValue($key, $params[$key], PDO::PARAM_INT);
     }
   }
-
-  //   foreach ($params as $key => $value) {
-  //     if (strpos($key, 'filename') !== false) {
-  //         $stmt->bindValue($key, $value, PDO::PARAM_STR);
-  //     } else {
-  //         $stmt->bindValue($key, $value, PDO::PARAM_INT);
-  //     }
-  // }
 
   $result = $stmt->execute();
   $stmt = null;

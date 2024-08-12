@@ -5,18 +5,7 @@ const form = document.querySelector('form');
 // const api = 'dxmprofuse/src/api/addFiles.php';
 
 formInput.addEventListener('change', e => {
-  // form.submit()
-  console.log('changé');
-
-  Array.from(formInput.files).forEach(file => {
-    console.log(file.type)
-form.submit()
-    // if (file.type !== 'application/pdf' && file.type !== 'image/jpeg') {
-    //   alert('Un des fichiers envoyés n\'est pas pris en charge')
-    // } else {
-    //   form.submit()
-    // }
-  })
+  form.submit()
 })
 const deleteButtons = document.querySelectorAll('.delete');
 
