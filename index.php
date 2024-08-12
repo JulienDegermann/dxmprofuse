@@ -1,11 +1,11 @@
 <?php
-// database connexion
-include_once './src/config/pdo.php';
+  // constants
+  include_once './src/core/uploadSettings.php';
 
-// GET files
-include_once './src/api/getFiles.php';
-
-// include_once './src/core/fakeDatas.php';
+  // files management
+  include_once './src/api/getFiles.php';
+  include_once './src/api/addFiles.php';
+  include_once './src/api/removeFiles.php';
 ?>
 
 <!DOCTYPE html>
@@ -22,16 +22,16 @@ include_once './src/api/getFiles.php';
 <body>
   <section id="file-loader">
     <div class="flex">
-      <form action="src/api/addFiles.php" method="POST" enctype="multipart/form-data" class="flex">
+      <form action="" method="POST" enctype="multipart/form-data" class="flex">
         <?php include_once './src/assets/icons/download.svg'; ?>
         <label class="bold" for="files">Glisser & Déposer <br /> vos fichiers <br /> ici</label>
-        <input id="files" type="file" name="files[]"  multiple aria-label="charger des fichiers">
+        <input id="files" type="file" name="files[]" multiple aria-label="charger des fichiers">
       </form>
       <div class="files">
         <div class="scroll">
 
           <?php
-          foreach ($files as $file) {
+          foreach ($files as $key => $file) {
             include './templates/_fileItem.php';
           }
           ?>
