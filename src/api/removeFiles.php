@@ -7,6 +7,6 @@ if (isset($_GET['key']) && is_numeric($_GET['key'])) {
 
   if (file_exists(UPLOAD_DIR . $file['filename']) && is_file(UPLOAD_DIR . $file['filename'])) {
     unlink(UPLOAD_DIR . $file['filename']);
-    header('Location: /');
+    header('Location: /dxmprofuse/');
   }
 }

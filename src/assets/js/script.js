@@ -1,6 +1,8 @@
 const formInput = document.querySelector('#files');
 const form = document.querySelector('form');
 
+const root = '/dxmprofuse';``
+
 formInput.addEventListener('change', () => {
   let totalWeight = 0
   let error = ''
@@ -35,6 +37,6 @@ const deleteButtons = document.querySelectorAll('.delete');
 deleteButtons.forEach(button => {
   button.addEventListener('click', e => {
     const id = e.currentTarget.id
-    location.href = '/?key=' + id
+    location.href =  root + '?key=' + id
   })
 })

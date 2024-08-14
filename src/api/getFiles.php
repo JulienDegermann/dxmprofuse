@@ -1,11 +1,12 @@
 <?php
 
 // get uploads directory content
-$filesFromDir = scandir('public/uploads');
+// $filesFromDir = scandir('public/uploads/');
+$filesFromDir = scandir(UPLOAD_DIR);
 
 // remove anything not being pdf or jpeg
 foreach ($filesFromDir as $key => $file) {
-  if (!is_file(UPLOAD_DIR . $file) || $file == '.gitignore') {
+  if (!is_file('public/uploads/' . $file) || $file == '.gitignore') {
     unset($filesFromDir[$key]);
   }
 }

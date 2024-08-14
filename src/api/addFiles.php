@@ -32,5 +32,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['files'])) {
     move_uploaded_file($file['tmp_name'], UPLOAD_DIR . $file['name']);
   }
 
-  header('Location: /');
+  header('Location: /dxmprofuse/' );
 }
