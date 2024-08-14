@@ -4,41 +4,41 @@
   background: var(--LIST);
   height: 100%;
   overflow-y: hidden;
+}
 
-  .scroll {
-    overflow-y: scroll;
-    scrollbar-color: var(--PRIMARY) var(--GRAY);
-    padding-right: 2rem;
-    height: calc(100% - 0rem);
-  }
+.scroll {
+  overflow-y: scroll;
+  scrollbar-color: var(--PRIMARY) var(--GRAY);
+  padding-right: 2rem;
+  height: calc(100% - 0rem);
+}
 
-  .item.flex {
-    margin: .25rem 0;
-    justify-content: space-between;
-    font-size: 18px;
-    margin-bottom: 1.2rem;
-    font-weight: 400;
+.files .item.flex {
+  margin: .25rem 0;
+  justify-content: space-between;
+  font-size: 18px;
+  margin-bottom: 1.2rem;
+  font-weight: 400;
+}
 
-    & .bold {
-      font-size: 25px;
-      font-weight: 500;
-      word-break: break-word;
-    }
+.files .item.flex .bold {
+  font-size: 25px;
+  font-weight: 500;
+  word-break: break-word;
+}
 
-    .delete {
-      cursor: pointer;
-      width: auto;
-      height: auto;
-      background: none;
-      border: none;
+.delete {
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  background: none;
+  border: none;
+}
 
-      & * {
-        transition: fill .3s;
-      }
+.delete * {
+  transition: fill .3s;
+}
 
-      &:hover * {
-        fill: red;
-      }
-    }
-  }
+.delete:hover * {
+  fill: red;
 }
